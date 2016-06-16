@@ -1,4 +1,4 @@
-class sample1 {
+class package_install {
 package { 'vim-enhanced':
     provider => yum,
     ensure   => installed,
@@ -25,7 +25,7 @@ class add_user {
 }
 
 
-class directory1 {
+class directory_scripts {
 
 file { '/home/monitor/scripts':
     ensure => 'directory',
@@ -50,7 +50,7 @@ file{'/home/monitor/scripts/check_memory':
 }
 
 
-class directory2 {
+class directory_src {
 
 file { '/home/monitor/src':
     ensure => 'directory',
@@ -82,11 +82,11 @@ cron {'cron':
 
 
 node 'bpx.server.local' { 
-	include 'sample1' 
+	include 'package_install' 
 	include 'add_user'
-	include 'directory1'
+	include 'directory_scripts'
 	include 'get_script'
-	include 'directory2'
+	include 'directory_src'
 	include 'soft_link'
 	include 'cron'
 }
