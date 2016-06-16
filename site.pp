@@ -70,7 +70,7 @@ file { '/home/monitor/src/my_memory_check':
 
 class cron {
 cron {'cron':
-        command => "sh /home/monitor/src/my_memory_check -w 60 -c 80 -e email@mine.com",
+        command => "sh /home/monitor/src/my_memory_check -w 60 -c 80 -e jesilva@chikka.com",
         minute => '10',
         hour => '*',
         month => '*',
